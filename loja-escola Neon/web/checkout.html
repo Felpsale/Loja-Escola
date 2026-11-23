@@ -1,0 +1,428 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Revise seu artefato e preencha os dados para concluir uma compra demonstrativa no Neon Bazar."
+    />
+    <meta name="theme-color" content="#05070d" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Terminal Checkout | Neon Bazar" />
+    <meta
+      property="og:description"
+      content="Finalize sua simulação de compra no Mercado Noturno."
+    />
+    <title>Terminal Checkout | Neon Bazar</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script src="js/products.js" defer></script>
+    <script src="js/checkout.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg" aria-label="Navegação principal">
+        <div class="container">
+          <a
+            class="navbar-brand brand-mark"
+            href="index.html"
+            aria-label="Neon Bazar — página inicial"
+          >
+            <span class="brand-symbol" aria-hidden="true">N//B</span>
+            <span>
+              NEON <span class="brand-highlight">BAZAR</span>
+              <span class="brand-sub">NIGHT MARKET // 2077</span>
+            </span>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuPrincipal"
+            aria-controls="menuPrincipal"
+            aria-expanded="false"
+            aria-label="Abrir ou fechar menu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Continuar explorando</a>
+              </li>
+              <li class="nav-item">
+                <a
+                  class="nav-link active"
+                  aria-current="page"
+                  href="checkout.html"
+                  >Terminal Checkout</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="conteudo" class="container py-5">
+      <p class="eyebrow">Última etapa // Transação criptografada simulada</p>
+      <h1 class="display-5 fw-bold mb-2" id="titulo-checkout">
+        Conecte seus dados ao contrato.
+      </h1>
+      <p class="section-description mb-5">
+        Preencha os campos para concluir a demonstração. Nenhum crédito real
+        será debitado.
+      </p>
+
+      <section
+        id="checkoutIndisponivel"
+        class="empty-state text-center py-5"
+        hidden
+        aria-labelledby="titulo-checkout-indisponivel"
+      >
+        <p class="eyebrow">Terminal vazio</p>
+        <h2 class="h3" id="titulo-checkout-indisponivel">
+          Nenhum artefato foi selecionado.
+        </h2>
+        <p>
+          Retorne à vitrine, inspecione um artefato e informe a quantidade
+          desejada.
+        </p>
+        <a class="btn btn-neon" href="index.html">Explorar catálogo</a>
+      </section>
+
+      <div id="checkoutLayout" class="row g-4 g-lg-5 align-items-start">
+        <section class="col-lg-7" aria-labelledby="titulo-dados">
+          <h2 id="titulo-dados" class="h4 mb-4">
+            Dados de entrega // Drop-Point
+          </h2>
+          <form id="checkoutForm" novalidate>
+            <fieldset class="form-section mb-4">
+              <legend>01 // Identificação do Runner</legend>
+              <div class="row g-3">
+                <div class="col-12">
+                  <label for="nome" class="form-label"
+                    >Nome completo ou codinome</label
+                  >
+                  <input
+                    class="form-control"
+                    id="nome"
+                    name="nome"
+                    type="text"
+                    autocomplete="name"
+                    required
+                    aria-describedby="nomeErro"
+                  />
+                  <div class="invalid-feedback" id="nomeErro">
+                    Informe seu nome completo.
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="email" class="form-label"
+                    >E-mail / Net-Mail</label
+                  >
+                  <input
+                    class="form-control"
+                    id="email"
+                    name="email"
+                    type="email"
+                    autocomplete="email"
+                    required
+                    aria-describedby="emailErro"
+                  />
+                  <div class="invalid-feedback" id="emailErro">
+                    Informe um e-mail válido.
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="telefone" class="form-label"
+                    >Holofone
+                    <span class="optional-label">(opcional)</span></label
+                  >
+                  <input
+                    class="form-control"
+                    id="telefone"
+                    name="telefone"
+                    type="tel"
+                    autocomplete="tel"
+                    inputmode="tel"
+                    placeholder="(11) 99999-9999"
+                  />
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset class="form-section mb-4">
+              <legend>02 // Coordenadas de entrega</legend>
+              <p class="form-hint">
+                Informe um CEP brasileiro para rastrear automaticamente o
+                endereço via ViaCEP.
+              </p>
+              <div class="row g-3">
+                <div class="col-md-5">
+                  <label for="cep" class="form-label">CEP</label>
+                  <div class="input-group has-validation">
+                    <input
+                      class="form-control"
+                      id="cep"
+                      name="cep"
+                      type="text"
+                      inputmode="numeric"
+                      autocomplete="postal-code"
+                      placeholder="00000-000"
+                      maxlength="9"
+                      required
+                      aria-describedby="ajudaCep cepErro"
+                    />
+                    <button
+                      class="btn btn-outline-neon"
+                      id="buscarCep"
+                      type="button"
+                    >
+                      Buscar CEP
+                    </button>
+                    <div class="invalid-feedback" id="cepErro">
+                      Informe um CEP com oito números.
+                    </div>
+                  </div>
+                  <div id="ajudaCep" class="form-text">Exemplo: 01001-000.</div>
+                </div>
+                <div class="col-md-7">
+                  <label for="logradouro" class="form-label">Logradouro</label>
+                  <input
+                    class="form-control"
+                    id="logradouro"
+                    name="logradouro"
+                    type="text"
+                    autocomplete="address-line1"
+                    required
+                    aria-describedby="logradouroErro"
+                  />
+                  <div class="invalid-feedback" id="logradouroErro">
+                    Informe o logradouro.
+                  </div>
+                </div>
+                <div class="col-md-4">
+                  <label for="numero" class="form-label">Número</label>
+                  <input
+                    class="form-control"
+                    id="numero"
+                    name="numero"
+                    type="text"
+                    required
+                    aria-describedby="numeroErro"
+                  />
+                  <div class="invalid-feedback" id="numeroErro">
+                    Informe o número.
+                  </div>
+                </div>
+                <div class="col-md-8">
+                  <label for="complemento" class="form-label"
+                    >Complemento / Setor
+                    <span class="optional-label">(opcional)</span></label
+                  >
+                  <input
+                    class="form-control"
+                    id="complemento"
+                    name="complemento"
+                    type="text"
+                    autocomplete="address-line2"
+                  />
+                </div>
+                <div class="col-md-5">
+                  <label for="bairro" class="form-label"
+                    >Bairro / Distrito</label
+                  >
+                  <input
+                    class="form-control"
+                    id="bairro"
+                    name="bairro"
+                    type="text"
+                    autocomplete="address-level3"
+                  />
+                </div>
+                <div class="col-md-5">
+                  <label for="cidade" class="form-label">Cidade</label>
+                  <input
+                    class="form-control"
+                    id="cidade"
+                    name="cidade"
+                    type="text"
+                    autocomplete="address-level2"
+                    required
+                    aria-describedby="cidadeErro"
+                  />
+                  <div class="invalid-feedback" id="cidadeErro">
+                    Informe a cidade.
+                  </div>
+                </div>
+                <div class="col-md-2">
+                  <label for="estado" class="form-label">UF</label>
+                  <input
+                    class="form-control text-uppercase"
+                    id="estado"
+                    name="estado"
+                    type="text"
+                    maxlength="2"
+                    autocomplete="address-level1"
+                    required
+                    aria-describedby="estadoErro"
+                  />
+                  <div class="invalid-feedback" id="estadoErro">
+                    Informe a UF.
+                  </div>
+                </div>
+              </div>
+              <div
+                id="cepFeedback"
+                class="feedback-line mt-3"
+                role="status"
+                aria-live="polite"
+              ></div>
+            </fieldset>
+
+            <fieldset class="form-section mb-4">
+              <legend>03 // Transferência de créditos (fictício)</legend>
+              <label for="pagamento" class="form-label"
+                >Método de transferência</label
+              >
+              <select
+                class="form-select"
+                id="pagamento"
+                name="pagamento"
+                required
+                aria-describedby="pagamentoErro"
+              >
+                <option value="">Selecione uma opção...</option>
+                <option value="pix">Pix Instantâneo (simulação)</option>
+                <option value="credito">Credchip / Cartão (simulação)</option>
+                <option value="boleto">Data-Boleto (simulação)</option>
+              </select>
+              <div class="invalid-feedback" id="pagamentoErro">
+                Escolha uma forma de pagamento.
+              </div>
+            </fieldset>
+
+            <div class="form-check mb-4">
+              <input
+                class="form-check-input"
+                id="termos"
+                name="termos"
+                type="checkbox"
+                required
+                aria-describedby="termosErro"
+              />
+              <label class="form-check-label" for="termos"
+                >Confirmo que os dados são usados apenas nesta simulação
+                acadêmica.</label
+              >
+              <div class="invalid-feedback" id="termosErro">
+                É necessário confirmar a simulação.
+              </div>
+            </div>
+
+            <button
+              class="btn btn-neon btn-lg w-100 w-md-auto"
+              id="concluirCompra"
+              type="submit"
+            >
+              Autorizar transferência <span aria-hidden="true">→</span>
+            </button>
+            <div
+              id="checkoutFeedback"
+              class="feedback-line mt-3"
+              role="status"
+              aria-live="polite"
+            ></div>
+          </form>
+        </section>
+
+        <aside class="col-lg-5" aria-labelledby="titulo-resumo">
+          <div class="summary-box">
+            <p class="eyebrow">Resumo do contrato</p>
+            <h2 id="titulo-resumo" class="h4 mb-4">Manifesto de carga</h2>
+            <div class="summary-product-row">
+              <div
+                class="summary-product-thumb"
+                id="resumoThumb"
+                aria-hidden="true"
+              ></div>
+              <div class="flex-grow-1">
+                <p class="summary-product-name mb-2" id="resumoProduto">
+                  Produto selecionado
+                </p>
+                <label class="form-label small mb-1" for="quantidadeCheckout"
+                  >Quantidade</label
+                >
+                <input
+                  class="form-control summary-quantity-input"
+                  id="quantidadeCheckout"
+                  name="quantidadeCheckout"
+                  type="number"
+                  min="1"
+                  max="10"
+                  value="1"
+                  required
+                  aria-describedby="quantidadeAjuda"
+                />
+                <div class="form-text" id="quantidadeAjuda">
+                  De 1 a 10 unidades.
+                </div>
+              </div>
+            </div>
+            <hr />
+            <div class="summary-line">
+              <span>Subtotal</span><strong id="resumoSubtotal">R$ 0,00</strong>
+            </div>
+            <div class="summary-line">
+              <span>Logística Drone</span
+              ><strong id="resumoFrete">R$ 0,00</strong>
+            </div>
+            <hr />
+            <div class="summary-line summary-total">
+              <span>Total</span><strong id="resumoTotal">R$ 0,00</strong>
+            </div>
+            <p class="summary-note mb-0">
+              Entrega grátis via drone a partir de R$ 250,00. Abaixo desse
+              valor, a taxa demonstrativa é de R$ 14,90.
+            </p>
+          </div>
+          <p class="small footer-muted mt-3 font-monospace">
+            AMBIENTE FICTÍCIO // Não informe dados bancários reais.
+          </p>
+        </aside>
+      </div>
+    </main>
+
+    <footer class="site-footer py-4">
+      <div
+        class="container d-flex flex-column flex-md-row justify-content-between gap-2"
+      >
+        <p class="mb-0">
+          NEON BAZAR <span class="footer-separator">//</span> Night Market &amp;
+          Artefatos do Amanhã.
+        </p>
+        <p class="mb-0 footer-muted">
+          Simulação acadêmica · Sem cobrança real.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

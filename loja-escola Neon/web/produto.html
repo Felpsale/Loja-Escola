@@ -1,0 +1,222 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Inspecione o Data-Shard técnico, atributos de RPG e detalhes de um artefato do Neon Bazar."
+    />
+    <meta name="theme-color" content="#05070d" />
+    <meta property="og:type" content="product" />
+    <meta property="og:title" content="Data-Shard do Artefato | Neon Bazar" />
+    <meta
+      property="og:description"
+      content="Ficha técnica e atributos de RPG de mesa no Neon Bazar."
+    />
+    <title>Data-Shard do Artefato | Neon Bazar</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Orbitron:wght@700;800;900&family=Rajdhani:wght@500;600;700&family=Share+Tech+Mono&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      defer
+    ></script>
+    <script src="js/products.js" defer></script>
+    <script src="js/product.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#conteudo">Pular para o conteúdo principal</a>
+
+    <header class="site-header">
+      <nav class="navbar navbar-expand-lg" aria-label="Navegação principal">
+        <div class="container">
+          <a
+            class="navbar-brand brand-mark"
+            href="index.html"
+            aria-label="Neon Bazar — página inicial"
+          >
+            <span class="brand-symbol" aria-hidden="true">N//B</span>
+            <span>
+              NEON <span class="brand-highlight">BAZAR</span>
+              <span class="brand-sub">NIGHT MARKET // 2077</span>
+            </span>
+          </a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#menuPrincipal"
+            aria-controls="menuPrincipal"
+            aria-expanded="false"
+            aria-label="Abrir ou fechar menu"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="menuPrincipal">
+            <ul class="navbar-nav ms-auto">
+              <li class="nav-item">
+                <a class="nav-link" href="index.html">Vitrine</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="checkout.html">Terminal Checkout</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main id="conteudo" class="container py-5">
+      <nav aria-label="Caminho de navegação">
+        <ol class="breadcrumb custom-breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Vitrine</a></li>
+          <li
+            class="breadcrumb-item active"
+            aria-current="page"
+            id="breadcrumbProduto"
+          >
+            Data-Shard
+          </li>
+        </ol>
+      </nav>
+
+      <section
+        id="produtoConteudo"
+        class="row g-4 g-lg-5 align-items-start"
+        aria-labelledby="nomeProduto"
+      >
+        <div class="col-lg-6">
+          <div id="ilustracaoProduto" class="product-detail-media"></div>
+        </div>
+
+        <div class="col-lg-6">
+          <p class="eyebrow mb-2" id="categoriaProduto">
+            Fabricante // Categoria
+          </p>
+          <div class="mb-3">
+            <span class="rule-tag" id="regraProduto">Regra criativa</span>
+          </div>
+          <h1 id="nomeProduto" class="display-5 fw-bold">
+            Carregando Data-Shard...
+          </h1>
+          <p id="descricaoProduto" class="lead"></p>
+
+          <div class="d-flex flex-wrap align-items-baseline gap-3">
+            <p id="precoProduto" class="price price-large mb-1"></p>
+            <span id="eddiesProduto" class="eddies-tag"></span>
+          </div>
+
+          <p
+            id="descricaoDetalhada"
+            class="product-long-description mt-2 mb-4"
+          ></p>
+
+          <div
+            class="rpg-detail-grid mb-4"
+            aria-label="Atributos de RPG de mesa"
+          >
+            <div class="rpg-detail-box">
+              <span>Raridade</span>
+              <strong id="rpgRaridade">—</strong>
+            </div>
+            <div class="rpg-detail-box">
+              <span>Custo de Humanidade</span>
+              <strong id="rpgHumanidade">—</strong>
+            </div>
+            <div class="rpg-detail-box">
+              <span>Disponibilidade</span>
+              <strong id="rpgDisponibilidade">—</strong>
+            </div>
+            <div class="rpg-detail-box">
+              <span>Corporação / Origem</span>
+              <strong id="rpgFabricante">—</strong>
+            </div>
+          </div>
+
+          <section
+            class="spec-panel mb-4"
+            aria-labelledby="titulo-especificacoes"
+          >
+            <h2 id="titulo-especificacoes" class="h5 mb-3">
+              Ficha técnica // Telemetria
+            </h2>
+            <dl id="listaEspecificacoes" class="spec-list mb-0"></dl>
+          </section>
+
+          <form id="formProduto" class="purchase-form">
+            <div class="mb-3">
+              <label for="quantidade" class="form-label"
+                >Quantidade de unidades</label
+              >
+              <input
+                class="form-control quantity-field"
+                id="quantidade"
+                name="quantidade"
+                type="number"
+                min="1"
+                max="10"
+                value="1"
+                required
+              />
+              <div class="form-text">
+                Limite de 10 unidades por contrato nesta simulação.
+              </div>
+            </div>
+            <div class="d-flex flex-wrap gap-3">
+              <button class="btn btn-neon btn-lg" type="submit">
+                Transferir ao terminal <span aria-hidden="true">→</span>
+              </button>
+              <a class="btn btn-outline-neon btn-lg" href="index.html"
+                >Voltar ao catálogo</a
+              >
+            </div>
+          </form>
+          <div
+            id="produtoFeedback"
+            class="feedback-line mt-3"
+            role="status"
+            aria-live="polite"
+          ></div>
+        </div>
+      </section>
+
+      <section
+        id="produtoInexistente"
+        class="empty-state text-center py-5"
+        aria-labelledby="titulo-inexistente"
+        hidden
+      >
+        <p class="eyebrow">Sinal corrompido · Erro 404</p>
+        <h2 id="titulo-inexistente" class="h3">
+          Esse artefato não consta nos servidores do Night Market.
+        </h2>
+        <p>Verifique o identificador na URL ou retorne à vitrine principal.</p>
+        <a class="btn btn-neon" href="index.html">Voltar à vitrine</a>
+      </section>
+    </main>
+
+    <footer class="site-footer py-4">
+      <div
+        class="container d-flex flex-column flex-md-row justify-content-between gap-2"
+      >
+        <p class="mb-0">
+          NEON BAZAR <span class="footer-separator">//</span> Night Market &amp;
+          Artefatos do Amanhã.
+        </p>
+        <p class="mb-0 footer-muted">
+          Compra demonstrativa · Sem cobrança real.
+        </p>
+      </div>
+    </footer>
+  </body>
+</html>

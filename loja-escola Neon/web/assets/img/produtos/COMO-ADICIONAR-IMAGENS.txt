@@ -1,0 +1,28 @@
+========================================================================
+NEON BAZAR // GUIA PARA ADICIONAR IMAGENS DO JOGO NO CATÁLOGO
+========================================================================
+
+Em vez de GIFs, o catálogo agora usa slots widescreen (proporção 16:10)
+prontos para receber capturas de tela (screenshots) de Cyberpunk 2077,
+artes de Cyberpunk RED ou renders dos itens.
+
+COMO ADICIONAR SUAS IMAGENS:
+
+1. Salve suas imagens nesta pasta (`web/assets/img/produtos/`) com os
+   seguintes nomes exatos (formato .png, .jpg ou .webp):
+
+   - zumbilume.png       -> Produto 1: Zumbilume
+   - microdrone.png      -> Produto 2: Microdrone Sussurro
+   - nucleo-colosso.png  -> Produto 3: Núcleo Colosso
+   - ninho-01.png        -> Produto 4: Ninho-01
+   - capacete-orbita.png -> Produto 5: Capacete Órbita Zero
+   - veu-fantasma.png    -> Produto 6: Véu Fantasma
+
+2. Se preferir usar outro nome ou extensão (ex.: .jpg ou .webp), basta
+   abrir o arquivo `web/js/products.js` e alterar a propriedade `imagem`
+   do produto desejado.
+
+3. Enquanto o arquivo não estiver nesta pasta, o site exibe
+   automaticamente um quadro HUD técnico mostrando o caminho esperado,
+   sem quebrar o layout!
+========================================================================
